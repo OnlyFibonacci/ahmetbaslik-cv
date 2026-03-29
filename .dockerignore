@@ -1,0 +1,23 @@
+# Bağımlılıklar ve derleme çıktısı imajda yeniden üretilir
+node_modules
+.next
+out
+
+# Git ve IDE
+.git
+.gitignore
+.cursor
+*.md
+
+# Ortam ve gizli dosyalar
+.env
+.env.*
+!.env.example
+
+# Test ve geçici dosyalar
+coverage
+*.log
+npm-debug.log*
+
+# Coolify / yerel
+.docker

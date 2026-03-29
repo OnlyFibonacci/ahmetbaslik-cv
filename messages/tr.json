@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "siteName": "Ahmet Başlık",
+    "homeDescription": "Bilişim sistemleri mühendisi; fintech, yazılım ve e-ticaret alanlarında profesyonel profil."
+  },
+  "nav": {
+    "brand": "Ahmet Başlık",
+    "home": "Ana sayfa",
+    "cvTrading": "TradingView & ortaklıklar",
+    "cvSoftware": "Yazılım",
+    "cvEcommerce": "E-ticaret",
+    "openMenu": "Menüyü aç",
+    "language": "Dil"
+  },
+  "home": {
+    "heroTitle": "Merhaba, ben Ahmet Başlık.",
+    "heroSubtitle": "Bilişim sistemleri mühendisi. Fintech, tam yığın yazılım ve e-ticaret alanlarında işverenlere ve ortaklara yönelik güncel özgeçmişler.",
+    "chooseTrack": "Uzmanlık alanını seçin",
+    "cardTradingDesc": "TradingView, Pine Script, webhook entegrasyonları ve topluluk ölçeğinde eğitim.",
+    "cardSoftwareDesc": "SaaS, fintech, açık kaynak ve modern web/backend projeleri.",
+    "cardEcommerceDesc": "Pazaryeri, operasyon, otomasyon ve dijital büyüme.",
+    "viewCv": "Özgeçmişi görüntüle",
+    "footerNote": "İletişim ve bağlantılar her CV sayfasının kenar çubuğunda yer alır."
+  },
+  "cv": {
+    "personName": "Ahmet Başlık",
+    "backHome": "Ana sayfaya dön",
+    "reach": "Erişim",
+    "contact": "İletişim",
+    "links": "Bağlantılar",
+    "stack": "Yetenekler",
+    "education": "Eğitim",
+    "credentials": "Diğer",
+    "languages": "Diller",
+    "profile": "Profil",
+    "experience": "Deneyim ve projeler",
+    "skills": "Beceriler",
+    "why": "Öne çıkanlar",
+    "whyPartnerships": "Neden ortaklık",
+    "whyMe": "Neden ben?"
+  }
+}
