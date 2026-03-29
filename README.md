@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ahmetbaslik.com — kişisel site
 
-## Getting Started
+Next.js 16, shadcn/ui ve **next-intl** ile **Türkçe / İngilizce** özgeçmiş sayfaları.
 
-First, run the development server:
+## Geliştirme
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000/tr](http://localhost:3000/tr) veya `/en`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production derlemesi
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## GitHub’a gönderme
 
-To learn more about Next.js, take a look at the following resources:
+1. GitHub’da boş bir repo oluşturun.
+2. Yerelde (ilk kez):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+git add .
+git commit -m "feat: kişisel site — çok dilli CV"
+git branch -M main
+git remote add origin https://github.com/KULLANICI/REPO.git
+git push -u origin main
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`.gitignore` zaten `node_modules`, `.next`, `.env*` ve build çıktılarını dışarıda bırakır; API anahtarı kullanılmıyorsa ekstra gizli dosya gerekmez.
 
-## Deploy on Vercel
+## Coolify ile yayın
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Bu repoda kök dizinde bir **`Dockerfile`** vardır; `next.config.ts` içinde **`output: "standalone"`** kullanılıyor (küçük ve hızlı container imajı).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Coolify’da tipik ayarlar:
+
+| Ayar | Değer |
+|------|--------|
+| Kaynak | GitHub repo (branch `main`) |
+| Build tipi | Dockerfile (otomatik algılanır) |
+| **Port** | **3000** (container içi) |
+| Domain | Örn. `ahmetbaslik.com` — Coolify reverse proxy TLS verir |
+
+Coolify genelde `PORT` ortam değişkenini ayarlar; Dockerfile bunu kullanır. Ekstra `NEXT_PUBLIC_*` değişkeni şu an tanımlı değil.
+
+İlk deploy sonrası kök URL `/` → proxy ile `/tr` veya `/en` yönlendirmesi next-intl tarafından yapılır; canlıda `https://alanadiniz.com/tr` ve `https://alanadiniz.com/en` çalışmalıdır.
+
+## Yerel Docker testi (isteğe bağlı)
+
+```bash
+docker build -t ahmetbaslik-cv .
+docker run --rm -p 3000:3000 ahmetbaslik-cv
+```
+
+Tarayıcı: `http://localhost:3000/tr`
+"# ahmetbaslik-cv" 
