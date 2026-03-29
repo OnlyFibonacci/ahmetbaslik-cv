@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmet Başlık — CV (Yazılım)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root[data-theme="dark"] {
+      --page-bg: #0d0f14;
+      --cv-bg: #131722;
+      --cv-surface: #1e222d;
+      --cv-border: #2a2e39;
+      --cv-text: #d1d4dc;
+      --cv-muted: #787b86;
+      --cv-heading: #ffffff;
+      --cv-blue: #2962ff;
+      --cv-green: #089981;
+      --cv-accent: #4fc3f7;
+      --cv-card: rgba(19, 23, 34, 0.65);
+      color-scheme: dark;
+    }
+    :root[data-theme="light"] {
+      --page-bg: #e8eaef;
+      --cv-bg: #ffffff;
+      --cv-surface: #f4f6f9;
+      --cv-border: #e0e3eb;
+      --cv-text: #131722;
+      --cv-muted: #5d606b;
+      --cv-heading: #131722;
+      --cv-blue: #2962ff;
+      --cv-green: #089981;
+      --cv-accent: #1565c0;
+      --cv-card: #f4f6f9;
+      color-scheme: light;
+    }
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      html, body {
+        background: var(--cv-bg) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .a4-sheet {
+        box-shadow: none !important;
+        margin: 0 auto !important;
+        border-radius: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    #btn-theme-light,
+    #btn-theme-dark {
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    #btn-theme-light[aria-pressed="true"],
+    #btn-theme-dark[aria-pressed="true"] {
+      background-color: var(--cv-blue) !important;
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body class="min-h-dvh bg-[var(--page-bg)] py-4 font-sans text-[var(--cv-text)] antialiased transition-colors duration-200 md:py-6">
+  <div
+    class="no-print mx-auto mb-3 flex w-[210mm] max-w-[calc(100vw-1.5rem)] flex-wrap items-center justify-between gap-2 px-1"
+    role="toolbar"
+    aria-label="CV araçları"
+  >
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-[10px] font-semibold uppercase tracking-wider text-[var(--cv-muted)]">Tema</span>
+      <div class="inline-flex rounded-lg border border-[var(--cv-border)] bg-[var(--cv-surface)] p-0.5">
+        <button
+          type="button"
+          id="btn-theme-light"
+          class="rounded-md px-3 py-1.5 font-mono text-[10px] font-semibold text-[var(--cv-text)] hover:bg-[var(--cv-bg)] focus:outline-none focus:ring-2 focus:ring-[var(--cv-blue)]"
+          aria-pressed="false"
+          aria-label="Açık tema"
+        >
+          Açık
+        </button>
+        <button
+          type="button"
+          id="btn-theme-dark"
+          class="rounded-md px-3 py-1.5 font-mono text-[10px] font-semibold text-[var(--cv-text)] hover:bg-[var(--cv-bg)] focus:outline-none focus:ring-2 focus:ring-[var(--cv-blue)]"
+          aria-pressed="true"
+          aria-label="Koyu tema"
+        >
+          Koyu
+        </button>
+      </div>
+    </div>
+    <button
+      type="button"
+      id="btn-print-pdf"
+      class="rounded-lg border border-[var(--cv-green)] bg-[var(--cv-green)] px-4 py-2 font-mono text-[11px] font-bold text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--cv-blue)] focus:ring-offset-2 focus:ring-offset-[var(--page-bg)]"
+    >
+      A4 PDF (Yazdır)
+    </button>
+  </div>
+
+  <main
+    class="a4-sheet mx-auto flex h-[297mm] max-h-[297mm] min-h-[297mm] w-[210mm] flex-col overflow-hidden bg-[var(--cv-bg)] shadow-2xl ring-1 ring-[var(--cv-border)] print:shadow-none"
+    role="document"
+    aria-label="Özgeçmiş Ahmet Başlık"
+  >
+    <div class="h-1.5 w-full shrink-0 bg-gradient-to-r from-[var(--cv-blue)] via-[var(--cv-green)] to-[var(--cv-blue)]" aria-hidden="true"></div>
+
+    <div class="grid h-full min-h-0 flex-1 grid-cols-[58mm_minmax(0,1fr)] print:grid-cols-[58mm_minmax(0,1fr)]">
+      <aside class="flex h-full min-h-0 flex-col gap-3 overflow-hidden border-r border-[var(--cv-border)] bg-[var(--cv-surface)] px-3 py-4 print:py-4">
+        <div class="flex flex-col items-center text-center">
+          <div class="relative h-[84px] w-[84px] shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--cv-blue)] ring-offset-2 ring-offset-[var(--cv-surface)]">
+            <img src="cv_foto.jpg" alt="Ahmet Başlık" width="168" height="168" class="h-full w-full object-cover object-top" loading="eager" />
+          </div>
+          <p class="mt-2 text-[12px] font-bold leading-tight text-[var(--cv-heading)]">Ahmet Başlık</p>
+          <p class="text-[9.5px] font-medium leading-snug text-[var(--cv-muted)]">Bilişim Sistemleri Mühendisi</p>
+        </div>
+
+        <div class="h-px w-full shrink-0 bg-[var(--cv-border)]" aria-hidden="true"></div>
+
+        <div>
+          <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cv-green)]">İletişim</p>
+          <address class="mt-1.5 not-italic">
+            <ul class="space-y-1 text-[9.5px] leading-snug text-[var(--cv-text)]">
+              <li><a class="break-all text-[var(--cv-accent)] underline decoration-[var(--cv-border)] underline-offset-2 hover:opacity-80" href="mailto:ahmetbslk@gmail.com">ahmetbslk@gmail.com</a></li>
+              <li><a class="hover:opacity-80" href="tel:+905369127667">+90 (536) 912 76 67</a></li>
+              <li><a class="text-[var(--cv-accent)] hover:underline" href="https://www.linkedin.com/in/ahmetbaslik" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmetbaslik</a></li>
+              <li><a class="text-[var(--cv-accent)] hover:underline" href="https://github.com/OnlyFibonacci" target="_blank" rel="noopener noreferrer">github.com/OnlyFibonacci</a></li>
+            </ul>
+          </address>
+        </div>
+
+        <div class="h-px w-full shrink-0 bg-[var(--cv-border)]" aria-hidden="true"></div>
+
+        <div class="min-h-0">
+          <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cv-blue)]">Yetenekler</p>
+          <p class="mt-1.5 text-[9.5px] leading-snug text-[var(--cv-text)]">
+            Python · Flask · SQL · API · SaaS · PHP · MySQL · cPanel · Go · React · TypeScript · Next.js · Docker · Vite · Pine Script · VS Code · Cursor · Antigravity
+          </p>
+          <p class="mt-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cv-green)]">AI &amp; iş akışı</p>
+          <ul class="mt-1.5 list-disc space-y-0.5 pl-3.5 text-[9.5px] leading-snug text-[var(--cv-muted)] marker:text-[var(--cv-blue)]">
+            <li>VibeCoding</li>
+            <li>Hızlı MVP &amp; prototipleme</li>
+            <li>Prompt engineering</li>
+            <li>Cursor, Claude / GPT</li>
+          </ul>
+        </div>
+
+        <div class="h-px w-full shrink-0 bg-[var(--cv-border)]" aria-hidden="true"></div>
+
+        <div>
+          <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cv-blue)]">Eğitim</p>
+          <p class="mt-1 text-[9.5px] leading-snug text-[var(--cv-text)]">
+            <strong class="text-[var(--cv-heading)]">Bilişim Sistemleri Mühendisliği</strong><br />
+            <span class="text-[var(--cv-muted)]">Lisans · Sakarya Üniversitesi</span>
+          </p>
+          <p class="mt-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--cv-muted)]">Diğer</p>
+          <ul class="mt-1 list-disc space-y-0.5 pl-3.5 text-[9px] leading-snug text-[var(--cv-text)] marker:text-[var(--cv-green)]">
+            <li>B sınıfı ehliyet</li>
+            <li>Askerlik tamamlandı</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="flex h-full min-h-0 flex-col overflow-hidden px-3.5 py-4 print:px-4 print:py-4">
+        <div class="min-h-0 min-w-0 shrink overflow-hidden">
+          <header class="shrink-0 border-b border-[var(--cv-border)] pb-2">
+            <h1 class="text-[1.55rem] font-bold leading-tight tracking-tight text-[var(--cv-heading)]">Ahmet Başlık</h1>
+            <p class="mt-1.5 text-[11.5px] font-medium leading-snug text-[var(--cv-muted)]">Bilişim Sistemleri Mühendisi</p>
+          </header>
+
+          <section class="mt-2.5 shrink-0" aria-labelledby="profil-heading">
+            <h2 id="profil-heading" class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--cv-blue)]">Profil özeti</h2>
+            <p class="mt-1 text-[11px] leading-[1.48] text-[var(--cv-text)]">
+              <strong class="text-[var(--cv-heading)]">AI destekli geliştirme (VibeCoding)</strong> süreçlerine hakim; karmaşık iş problemlerini (<strong class="text-[var(--cv-heading)]">SaaS</strong>, <strong class="text-[var(--cv-heading)]">Fintech</strong>) hızlı prototipleme ve ölçeklenebilir kod yapısıyla çözen <strong class="text-[var(--cv-heading)]">Bilişim Sistemleri Mühendisi</strong>.
+            </p>
+          </section>
+
+          <section class="mt-2.5 shrink-0" aria-labelledby="deneyim-heading">
+            <h2 id="deneyim-heading" class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--cv-green)]">Deneyim &amp; projeler</h2>
+
+            <article class="mt-3 border-l-[3px] border-[var(--cv-blue)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">
+                <a class="hover:underline" href="https://store.algotrade.dev" target="_blank" rel="noopener noreferrer">store.algotrade.dev</a> — Fintech platform
+              </h3>
+              <p class="mt-0.5 text-[9.5px] leading-snug text-[var(--cv-muted)]">Finansal yazılımların küresel satışı; Iyzico ödeme entegrasyonu.</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-green)]">
+                <li>Yazılım dağıtımı için ölçeklenebilir <strong class="text-[var(--cv-heading)]">backend mimarisi</strong>.</li>
+                <li><strong class="text-[var(--cv-heading)]">Iyzico API</strong> ile güvenli ödeme ve abonelik altyapısı.</li>
+              </ul>
+            </article>
+
+            <article class="mt-5 border-l-[3px] border-[var(--cv-green)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">
+                <a class="hover:underline" href="https://adisyonqr.com" target="_blank" rel="noopener noreferrer">adisyonqr.com</a> — SaaS
+              </h3>
+              <p class="mt-0.5 text-[9.5px] text-[var(--cv-muted)]">Restoranlar için gerçek zamanlı sipariş &amp; yönetim; full-stack SaaS.</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-blue)]">
+                <li><strong class="text-[var(--cv-heading)]">Multi-tenant SaaS</strong> mimarisi.</li>
+                <li>Dinamik <strong class="text-[var(--cv-heading)]">QR menü</strong> jenerasyonu.</li>
+                <li>Özelleştirilebilir <strong class="text-[var(--cv-heading)]">tema</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="mt-5 border-l-[3px] border-[var(--cv-border)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">
+                <a class="hover:underline" href="https://github.com/SealLayer" target="_blank" rel="noopener noreferrer">SealLayer</a> — Açık kaynak / org
+              </h3>
+              <p class="mt-0.5 text-[9.5px] leading-snug text-[var(--cv-muted)]">Privacy-first içerik bütünlüğü &amp; GPG imzalı halka açık ledger.</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-muted)]">
+                <li>Ham veriyi sunucuya göndermeden <strong class="text-[var(--cv-heading)]">SHA-256 hash</strong> üzerinden çalışma; <strong class="text-[var(--cv-heading)]">GitHub</strong>’ı halka açık <strong class="text-[var(--cv-heading)]">ledger</strong> olarak kullanan kriptografik mühürleme.</li>
+                <li><strong class="text-[var(--cv-heading)]">Go (Gin)</strong>, <strong class="text-[var(--cv-heading)]">OpenPGP</strong> (detached signatures), <strong class="text-[var(--cv-heading)]">React 19</strong>, <strong class="text-[var(--cv-heading)]">TypeScript</strong>, <strong class="text-[var(--cv-heading)]">Vite</strong>.</li>
+                <li>Odak: gizlilik, denetlenebilirlik, <strong class="text-[var(--cv-heading)]">istemci tarafı doğrulama</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="mt-5 border-l-[3px] border-[var(--cv-blue)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">Next-Markdown-Blog-Engine — Blog altyapısı</h3>
+              <p class="mt-0.5 text-[9.5px] leading-snug text-[var(--cv-muted)]">Self-hosted, yüksek performanslı Markdown blog motoru (GitOps).</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-blue)]">
+                <li>Veritabanı bağımlılığı olmayan, tamamen <strong class="text-[var(--cv-heading)]">Git tabanlı</strong> içerik; <strong class="text-[var(--cv-heading)]">SSG</strong>, <strong class="text-[var(--cv-heading)]">Lighthouse</strong> odaklı performans.</li>
+                <li><strong class="text-[var(--cv-heading)]">Next.js 15+</strong> (App Router), <strong class="text-[var(--cv-heading)]">Tailwind CSS v4</strong>, <strong class="text-[var(--cv-heading)]">Shiki</strong>, <strong class="text-[var(--cv-heading)]">Unified / Remark / Rehype</strong>, <strong class="text-[var(--cv-heading)]">Docker</strong>.</li>
+                <li>Otomatik <strong class="text-[var(--cv-heading)]">TOC</strong>; <strong class="text-[var(--cv-heading)]">Coolify</strong> ile self-hosted dağıtım.</li>
+              </ul>
+            </article>
+
+            <article class="mt-5 border-l-[3px] border-[var(--cv-green)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">ToptanTedarik.com — E-ticaret &amp; otomasyon</h3>
+              <p class="mt-0.5 text-[9.5px] text-[var(--cv-muted)]">E-ticaret operasyonları için otomasyon ve backend süreçleri.</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-green)]">
+                <li><strong class="text-[var(--cv-heading)]">Python</strong> ile web-scraping: rakip fiyat analizi, otomatik fiyatlandırma.</li>
+                <li>Envanter / stok için özelleştirilmiş <strong class="text-[var(--cv-heading)]">backend</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="mt-5 border-l-[3px] border-[var(--cv-border)] pl-2.5">
+              <h3 class="text-[12px] font-bold leading-tight text-[var(--cv-heading)]">Udemy — Yetkili eğitmen (Pine Script)</h3>
+              <p class="mt-0.5 text-[9.5px] text-[var(--cv-muted)]">Algoritmik ticaret &amp; finansal yazılım eğitmeni.</p>
+              <ul class="mt-1 list-disc space-y-1 pl-3 text-[11px] leading-[1.42] marker:text-[var(--cv-muted)]">
+                <li><strong class="text-[var(--cv-heading)]">TradingView</strong> · <strong class="text-[var(--cv-heading)]">Pine Script</strong> ile teknik analiz &amp; strateji eğitimi.</li>
+                <li><strong class="text-[var(--cv-heading)]">3.000+</strong> öğrenciye algoritma &amp; <strong class="text-[var(--cv-heading)]">backtest</strong> mentorluğu.</li>
+                <li>Topluluk yönetimi &amp; teknik problem çözümü.</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+
+        <footer class="mt-auto shrink-0 border-t border-[var(--cv-border)] bg-[var(--cv-surface)]/50 pt-3 pb-0.5 print:pt-3" role="contentinfo" aria-label="Neden ben">
+          <h2 class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--cv-green)]">Neden ben?</h2>
+          <p class="mt-1 text-[11px] leading-[1.48] text-[var(--cv-text)]">
+            Modern <strong class="text-[var(--cv-heading)]">backend</strong> teknolojilerini ve <strong class="text-[var(--cv-heading)]">AI destekli geliştirme</strong> yöntemlerini birleştirerek klasik süreçlere göre daha hızlı ve kaliteli çıktı üretmeye odaklanıyorum. Mühendislik disiplinimi, projelerde edindiğim <strong class="text-[var(--cv-heading)]">ürün odaklı</strong> bakışla birleştirip teknik problemlere <strong class="text-[var(--cv-heading)]">pragmatik</strong> çözümler sunuyorum.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var storageKey = 'cv-ahmet-theme-software';
+
+      function setTheme(mode) {
+        root.setAttribute('data-theme', mode);
+        try {
+          localStorage.setItem(storageKey, mode);
+        } catch (e) {}
+        var lightOn = mode === 'light';
+        var btnL = document.getElementById('btn-theme-light');
+        var btnD = document.getElementById('btn-theme-dark');
+        if (btnL && btnD) {
+          btnL.setAttribute('aria-pressed', lightOn ? 'true' : 'false');
+          btnD.setAttribute('aria-pressed', lightOn ? 'false' : 'true');
+        }
+      }
+
+      try {
+        var saved = localStorage.getItem(storageKey);
+        if (saved === 'light' || saved === 'dark') setTheme(saved);
+        else setTheme('dark');
+      } catch (e) {
+        setTheme('dark');
+      }
+
+      document.getElementById('btn-theme-light').addEventListener('click', function () {
+        setTheme('light');
+      });
+      document.getElementById('btn-theme-dark').addEventListener('click', function () {
+        setTheme('dark');
+      });
+
+      document.getElementById('btn-print-pdf').addEventListener('click', function () {
+        window.print();
+      });
+    })();
+  </script>
+</body>
+</html>
