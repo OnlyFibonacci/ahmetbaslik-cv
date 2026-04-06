@@ -129,7 +129,7 @@
   }
 }
 
-/* CV: tarayıcıdan PDF (Yazdır → PDF) — A4 ve okunabilir çıktı */
+/* CV: tarayıcıdan PDF (Yazdır → PDF) — A4; web ile aynı iki sütun (sol / sağ) */
 @media print {
   @page {
     size: A4;
@@ -148,7 +148,14 @@
     padding-bottom: 0 !important;
   }
 
-  .cv-print-root section,
+  /* Tailwind print: yedek — bazı motorlarda iki sütun kesin uygulanır */
+  .cv-print-grid {
+    display: grid !important;
+    grid-template-columns: minmax(160px, 30%) minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+    align-items: start !important;
+  }
+
   .cv-print-root article {
     break-inside: avoid;
   }

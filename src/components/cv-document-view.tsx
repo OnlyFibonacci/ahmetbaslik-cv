@@ -31,8 +31,12 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
 
   return (
     <div className="cv-print-root mx-auto max-w-5xl px-4 py-10 sm:px-6">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,240px)_1fr]">
-        <aside className="flex flex-col gap-6 lg:sticky lg:top-20 lg:self-start">
+      {/*
+        Yazdırmada tarayıcı genişliği düşük sayılır; lg: iki sütun uygulanmaz.
+        print: ile web ile aynı yan yana düzeni zorunlu kılıyoruz.
+      */}
+      <div className="cv-print-grid grid gap-8 lg:grid-cols-[minmax(0,240px)_1fr] print:grid-cols-[minmax(180px,30%)_minmax(0,1fr)] print:gap-6 print:items-start">
+        <aside className="flex flex-col gap-6 print:static lg:sticky lg:top-20 lg:self-start print:self-start">
           <Card>
             <CardHeader className="flex flex-col items-center gap-3 text-center">
               <div className="relative size-28 overflow-hidden rounded-full ring-2 ring-primary ring-offset-2 ring-offset-card">
