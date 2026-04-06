@@ -30,7 +30,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
   } as const;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
+    <div className="cv-print-root mx-auto max-w-5xl px-4 py-10 sm:px-6">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,240px)_1fr]">
         <aside className="flex flex-col gap-6 lg:sticky lg:top-20 lg:self-start">
           <Card>

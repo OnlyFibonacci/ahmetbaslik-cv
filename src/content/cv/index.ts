@@ -1,14 +1,24 @@
 import type { CvSlug } from "./types";
 import { ecommerceCv } from "./ecommerce";
+import { graphicDesignCv } from "./graphic-design";
 import { softwareCv } from "./software";
 import { tradingviewCv } from "./tradingview";
 
 export type { CvDocument, CvSlug } from "./types";
 
+/** Statik rota ve doğrulama için tek kaynak */
+export const CV_SLUGS: CvSlug[] = [
+  "tradingview",
+  "software",
+  "ecommerce",
+  "graphic-design",
+];
+
 const bySlug = {
   tradingview: tradingviewCv,
   software: softwareCv,
   ecommerce: ecommerceCv,
+  "graphic-design": graphicDesignCv,
 } as const;
 
 /**
@@ -22,5 +32,5 @@ export function getCvDocument(
 }
 
 export function isCvSlug(value: string): value is CvSlug {
-  return value === "tradingview" || value === "software" || value === "ecommerce";
+  return (CV_SLUGS as readonly string[]).includes(value);
 }

@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/cv/tradingview", key: "cvTrading" as const },
   { href: "/cv/software", key: "cvSoftware" as const },
   { href: "/cv/ecommerce", key: "cvEcommerce" as const },
+  { href: "/cv/graphic-design", key: "cvGraphicDesign" as const },
 ];
 
 /**
@@ -30,7 +32,7 @@ export function SiteHeader() {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="print:hidden sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
@@ -58,6 +60,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(buttonVariants({ variant: "outline", size: "sm" }))}

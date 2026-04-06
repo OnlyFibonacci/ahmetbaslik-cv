@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,11 +22,11 @@ export const metadata: Metadata = {
     template: "%s · Ahmet Başlık",
   },
   description:
-    "Bilişim sistemleri mühendisi — fintech, yazılım ve e-ticaret özgeçmişleri.",
+    "Bilişim sistemleri mühendisi — fintech, yazılım, e-ticaret ve grafik tasarım özgeçmişleri.",
 };
 
 /**
- * Kök layout: tipografi değişkenleri ve koyu tema (CV görsel kimliği ile uyumlu).
+ * Kök layout: tipografi değişkenleri; tema sınıfı next-themes ile yönetilir.
  */
 export default function RootLayout({
   children,
@@ -35,10 +37,10 @@ export default function RootLayout({
     <html
       lang="tr"
       suppressHydrationWarning
-      className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

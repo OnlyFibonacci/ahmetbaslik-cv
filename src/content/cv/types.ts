@@ -1,7 +1,11 @@
 /**
  * Çok dilli özgeçmiş verisi için ortak yapı.
  */
-export type CvSlug = "tradingview" | "software" | "ecommerce";
+export type CvSlug =
+  | "tradingview"
+  | "software"
+  | "ecommerce"
+  | "graphic-design";
 
 export type CvAccent = "blue" | "green" | "muted";
 

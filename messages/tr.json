@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Ahmet Başlık",
-    "homeDescription": "Bilişim sistemleri mühendisi; fintech, yazılım ve e-ticaret alanlarında profesyonel profil."
+    "homeDescription": "Bilişim sistemleri mühendisi; fintech, yazılım, e-ticaret ve grafik tasarım alanlarında profesyonel profil."
   },
   "nav": {
     "brand": "Ahmet Başlık",
@@ -9,16 +9,21 @@
     "cvTrading": "TradingView & ortaklıklar",
     "cvSoftware": "Yazılım",
     "cvEcommerce": "E-ticaret",
+    "cvGraphicDesign": "Grafik tasarım",
     "openMenu": "Menüyü aç",
-    "language": "Dil"
+    "language": "Dil",
+    "themeLight": "Açık tema",
+    "themeDark": "Koyu tema",
+    "toggleTheme": "Tema değiştir"
   },
   "home": {
     "heroTitle": "Merhaba, ben Ahmet Başlık.",
-    "heroSubtitle": "Bilişim sistemleri mühendisi. Fintech, tam yığın yazılım ve e-ticaret alanlarında işverenlere ve ortaklara yönelik güncel özgeçmişler.",
+    "heroSubtitle": "Bilişim sistemleri mühendisi. Fintech, tam yığın yazılım, e-ticaret ve grafik tasarım alanlarında işverenlere ve ortaklara yönelik güncel özgeçmişler.",
     "chooseTrack": "Uzmanlık alanını seçin",
     "cardTradingDesc": "TradingView, Pine Script, webhook entegrasyonları ve topluluk ölçeğinde eğitim.",
     "cardSoftwareDesc": "SaaS, fintech, açık kaynak ve modern web/backend projeleri.",
     "cardEcommerceDesc": "Pazaryeri, operasyon, otomasyon ve dijital büyüme.",
+    "cardGraphicDesc": "Photoshop, sosyal medya yönetimi, Dribbble portföyü ve SaruPixel.",
     "viewCv": "Özgeçmişi görüntüle",
     "footerNote": "İletişim ve bağlantılar her CV sayfasının kenar çubuğunda yer alır."
   },
@@ -37,6 +42,8 @@
     "skills": "Beceriler",
     "why": "Öne çıkanlar",
     "whyPartnerships": "Neden ortaklık",
-    "whyMe": "Neden ben?"
+    "whyMe": "Neden ben?",
+    "downloadPdf": "PDF olarak indir",
+    "downloadPdfHint": "Yazdır penceresinde hedef olarak PDF seçin"
   }
 }

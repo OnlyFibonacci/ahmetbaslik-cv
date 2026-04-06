@@ -41,10 +41,15 @@ const cards = [
     title: "cvEcommerce" as const,
     desc: "cardEcommerceDesc" as const,
   },
+  {
+    href: "/cv/graphic-design",
+    title: "cvGraphicDesign" as const,
+    desc: "cardGraphicDesc" as const,
+  },
 ] as const;
 
 /**
- * Ana sayfa: üç uzmanlık alanına yönlendiren kartlar.
+ * Ana sayfa: uzmanlık alanı kartları.
  */
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -53,7 +58,7 @@ export default async function HomePage({ params }: Props) {
   const tHome = await getTranslations("home");
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
           {tHome("heroTitle")}
@@ -67,7 +72,7 @@ export default async function HomePage({ params }: Props) {
         {tHome("chooseTrack")}
       </p>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-3">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((c) => (
           <Card key={c.href} className="flex flex-col border-border/80 bg-card/50">
             <CardHeader>

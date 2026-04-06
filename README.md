@@ -58,4 +58,11 @@ docker run --rm -p 3000:3000 ahmetbaslik-cv
 ```
 
 Tarayıcı: `http://localhost:3000/tr`
-"# ahmetbaslik-cv" 
+
+## Tema
+
+Üst menüde güneş / ay ikonu ile **açık** ve **koyu** tema arasında geçiş yapılır. Varsayılan koyu temadır.
+
+## CV’yi PDF olarak kaydetme
+
+Özgeçmiş sayfasında **PDF olarak indir** düğmesi tarayıcının yazdırma penceresini açar. Yazdırırken hedef olarak **PDF** veya **Microsoft Print to PDF** seçerek dosyayı kaydedin. Üst menü ve geri bağlantısı yazdırmada gizlenir.

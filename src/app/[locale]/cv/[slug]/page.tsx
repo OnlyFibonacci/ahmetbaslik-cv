@@ -4,8 +4,14 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { CvDocumentView } from "@/components/cv-document-view";
+import { CvPdfButton } from "@/components/cv-pdf-button";
 import { buttonVariants } from "@/lib/button-variants";
-import { getCvDocument, isCvSlug, type CvSlug } from "@/content/cv";
+import {
+  CV_SLUGS,
+  getCvDocument,
+  isCvSlug,
+  type CvSlug,
+} from "@/content/cv";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -21,12 +27,15 @@ const titles: Record<CvSlug, { tr: string; en: string }> = {
   },
   software: { tr: "Yazılım", en: "Software" },
   ecommerce: { tr: "E-ticaret", en: "E-commerce" },
+  "graphic-design": {
+    tr: "Grafik tasarım",
+    en: "Graphic design",
+  },
 };
 
 export function generateStaticParams() {
-  const slugs: CvSlug[] = ["tradingview", "software", "ecommerce"];
   return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug }))
+    CV_SLUGS.map((slug) => ({ locale, slug }))
   );
 }
 
@@ -61,17 +70,18 @@ export default async function CvPage({ params }: Props) {
 
   return (
     <div>
-      <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+      <div className="print:hidden mx-auto flex max-w-5xl flex-col gap-4 px-4 pt-6 sm:flex-row sm:items-start sm:justify-between sm:px-6">
         <Link
           href="/"
           className={cn(
             buttonVariants({ variant: "ghost", size: "sm" }),
-            "-ml-2 gap-1"
+            "-ml-2 w-fit gap-1"
           )}
         >
           <ArrowLeftIcon data-icon="inline-start" />
           {t("backHome")}
         </Link>
+        <CvPdfButton />
       </div>
       <CvDocumentView doc={doc} />
     </div>

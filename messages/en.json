@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Ahmet Başlık",
-    "homeDescription": "Information systems engineer; professional profiles in fintech, software, and e-commerce."
+    "homeDescription": "Information systems engineer; professional profiles in fintech, software, e-commerce, and graphic design."
   },
   "nav": {
     "brand": "Ahmet Başlık",
@@ -9,16 +9,21 @@
     "cvTrading": "TradingView & partnerships",
     "cvSoftware": "Software",
     "cvEcommerce": "E-commerce",
+    "cvGraphicDesign": "Graphic design",
     "openMenu": "Open menu",
-    "language": "Language"
+    "language": "Language",
+    "themeLight": "Light theme",
+    "themeDark": "Dark theme",
+    "toggleTheme": "Toggle theme"
   },
   "home": {
     "heroTitle": "Hi, I'm Ahmet Başlık.",
-    "heroSubtitle": "Information systems engineer. Up-to-date résumés for employers and partners across fintech, full-stack software, and e-commerce.",
+    "heroSubtitle": "Information systems engineer. Up-to-date résumés for employers and partners across fintech, full-stack software, e-commerce, and graphic design.",
     "chooseTrack": "Choose a focus area",
     "cardTradingDesc": "TradingView, Pine Script, webhook integrations, and education at community scale.",
     "cardSoftwareDesc": "SaaS, fintech, open source, and modern web/backend projects.",
     "cardEcommerceDesc": "Marketplaces, operations, automation, and digital growth.",
+    "cardGraphicDesc": "Photoshop, social media management, Dribbble portfolio, and SaruPixel.",
     "viewCv": "View résumé",
     "footerNote": "Contact details and links are listed in each résumé sidebar."
   },
@@ -37,6 +42,8 @@
     "skills": "Skills",
     "why": "Highlights",
     "whyPartnerships": "Why partnerships",
-    "whyMe": "Why me"
+    "whyMe": "Why me",
+    "downloadPdf": "Save as PDF",
+    "downloadPdfHint": "In the print dialog, choose PDF as the destination"
   }
 }
