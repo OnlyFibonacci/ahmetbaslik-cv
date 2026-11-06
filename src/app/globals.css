@@ -129,15 +129,16 @@
   }
 }
 
-/* CV: tarayıcıdan PDF (Yazdır → PDF) — A4; web ile aynı iki sütun (sol / sağ) */
+/* CV: ATS tek sütun — Yazdır → PDF; UTF-8 Türkçe karakterler korunur */
 @media print {
   @page {
     size: A4;
-    margin: 12mm;
+    margin: 14mm;
   }
 
   body {
     background: white !important;
+    color: black !important;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -146,17 +147,23 @@
     max-width: 100% !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    color: black !important;
   }
 
-  /* Tailwind print: yedek — bazı motorlarda iki sütun kesin uygulanır */
-  .cv-print-grid {
-    display: grid !important;
-    grid-template-columns: minmax(160px, 30%) minmax(0, 1fr) !important;
-    gap: 1.5rem !important;
-    align-items: start !important;
+  .cv-print-root h1,
+  .cv-print-root h2,
+  .cv-print-root h3,
+  .cv-print-root p,
+  .cv-print-root li,
+  .cv-print-root a {
+    color: black !important;
   }
 
-  .cv-print-root article {
+  .cv-print-root a {
+    text-decoration: none !important;
+  }
+
+  .cv-print-root section {
     break-inside: avoid;
   }
 }

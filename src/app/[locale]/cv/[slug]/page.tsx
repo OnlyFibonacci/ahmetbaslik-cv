@@ -1,4 +1,3 @@
-import { ArrowLeftIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -70,15 +69,14 @@ export default async function CvPage({ params }: Props) {
 
   return (
     <div>
-      <div className="print:hidden mx-auto flex max-w-5xl flex-col gap-4 px-4 pt-6 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+      <div className="print:hidden mx-auto flex max-w-3xl flex-col gap-4 px-4 pt-6 sm:flex-row sm:items-start sm:justify-between sm:px-6">
         <Link
           href="/"
           className={cn(
             buttonVariants({ variant: "ghost", size: "sm" }),
-            "-ml-2 w-fit gap-1"
+            "-ml-2 w-fit"
           )}
         >
-          <ArrowLeftIcon data-icon="inline-start" />
           {t("backHome")}
         </Link>
         <CvPdfButton />
