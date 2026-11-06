@@ -130,9 +130,8 @@
 }
 
 /*
-  CV yazdırma / PDF:
-  Next.js App Router + next-themes bazen RSC flight payload (__next_f) ve
-  tema script metnini PDF’ye sızdırır. Yalnızca .cv-print-root görünür olsun.
+  PDF düğmesi temiz iframe kullanır (src/lib/print-cv.ts).
+  Ctrl+P yedek yolu: yalnızca CV + site chrome gizli.
 */
 @media print {
   @page {
@@ -140,106 +139,21 @@
     margin: 12mm;
   }
 
-  html.is-printing,
-  html {
-    background: white !important;
+  .print\:hidden,
+  script,
+  noscript {
+    display: none !important;
   }
 
-  html,
   body {
-    height: auto !important;
-    min-height: 0 !important;
     background: white !important;
     color: black !important;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  /* Script / stil / Next iç parçaları asla basılmasın */
-  script,
-  style,
-  noscript,
-  template,
-  iframe,
-  next-route-announcer,
-  [data-next-mark],
-  #__next-build-watcher {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-  }
-
-  /*
-    body * { display:none } ebeveynleri de kapatır; CV’nin ata zinciri
-    (main) açık kalmalı. Script/RSC sızıntısı böylece basılmaz.
-  */
-  body * {
-    display: none !important;
-  }
-
-  main,
-  .cv-print-root {
-    display: block !important;
   }
 
   .cv-print-root {
-    width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     color: black !important;
-    background: white !important;
-  }
-
-  .cv-print-root * {
-    display: revert !important;
-    color: black !important;
-  }
-
-  .cv-print-root ul {
-    display: block !important;
-  }
-
-  .cv-print-root li {
-    display: list-item !important;
-  }
-
-  .cv-print-root .flex {
-    display: flex !important;
-  }
-
-  .cv-print-root .flex-col {
-    flex-direction: column !important;
-  }
-
-  .cv-print-root h1,
-  .cv-print-root h2,
-  .cv-print-root h3,
-  .cv-print-root p,
-  .cv-print-root li,
-  .cv-print-root a,
-  .cv-print-root span {
-    color: black !important;
-  }
-
-  .cv-print-root a {
-    text-decoration: none !important;
-  }
-
-  .cv-print-root,
-  .cv-print-root section,
-  .cv-print-root .cv-job,
-  .cv-print-root ul,
-  .cv-print-root li {
-    break-inside: auto !important;
-    page-break-inside: auto !important;
-  }
-
-  .cv-print-root h2,
-  .cv-print-root h3 {
-    break-after: avoid;
-    page-break-after: avoid;
   }
 }
