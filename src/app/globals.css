@@ -129,43 +129,89 @@
   }
 }
 
-/* CV: ATS tek sütun — Yazdır → PDF (sürekli akış, büyük blokları sayfa altına itme) */
+/*
+  CV yazdırma / PDF:
+  Next.js App Router + next-themes bazen RSC flight payload (__next_f) ve
+  tema script metnini PDF’ye sızdırır. Yalnızca .cv-print-root görünür olsun.
+*/
 @media print {
   @page {
     size: A4;
     margin: 12mm;
   }
 
-  /*
-    Flex/sticky layout yazdırırken boş alan ve erken sayfa kırılmasına yol açabilir.
-  */
+  html.is-printing,
+  html {
+    background: white !important;
+  }
+
   html,
   body {
     height: auto !important;
     min-height: 0 !important;
-    display: block !important;
     background: white !important;
     color: black !important;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
-  body > * {
-    display: block !important;
+  /* Script / stil / Next iç parçaları asla basılmasın */
+  script,
+  style,
+  noscript,
+  template,
+  iframe,
+  next-route-announcer,
+  [data-next-mark],
+  #__next-build-watcher {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
   }
 
-  main {
+  /*
+    body * { display:none } ebeveynleri de kapatır; CV’nin ata zinciri
+    (main) açık kalmalı. Script/RSC sızıntısı böylece basılmaz.
+  */
+  body * {
+    display: none !important;
+  }
+
+  main,
+  .cv-print-root {
     display: block !important;
-    flex: none !important;
-    min-height: 0 !important;
   }
 
   .cv-print-root {
-    display: block !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     color: black !important;
+    background: white !important;
+  }
+
+  .cv-print-root * {
+    display: revert !important;
+    color: black !important;
+  }
+
+  .cv-print-root ul {
+    display: block !important;
+  }
+
+  .cv-print-root li {
+    display: list-item !important;
+  }
+
+  .cv-print-root .flex {
+    display: flex !important;
+  }
+
+  .cv-print-root .flex-col {
+    flex-direction: column !important;
   }
 
   .cv-print-root h1,
@@ -182,11 +228,6 @@
     text-decoration: none !important;
   }
 
-  /*
-    Kritik: section / büyük bloklarda break-inside: avoid KULLANMA.
-    Deneyim bölümü tek section olduğu için avoid, profil sonrası tüm
-    deneyimi sayfa 2’ye iter ve 1. sayfada boşluk bırakırdı.
-  */
   .cv-print-root,
   .cv-print-root section,
   .cv-print-root .cv-job,
@@ -196,12 +237,9 @@
     page-break-inside: auto !important;
   }
 
-  /* Başlık sayfa sonunda yalnız kalmasın; içerik hemen altında devam etsin */
   .cv-print-root h2,
   .cv-print-root h3 {
     break-after: avoid;
     page-break-after: avoid;
-    orphans: 3;
-    widows: 3;
   }
 }
