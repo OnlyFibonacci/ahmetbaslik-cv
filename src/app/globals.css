@@ -129,24 +129,42 @@
   }
 }
 
-/* CV: ATS tek sütun — Yazdır → PDF; UTF-8 Türkçe karakterler korunur */
+/* CV: ATS tek sütun — Yazdır → PDF (sürekli akış, büyük blokları sayfa altına itme) */
 @media print {
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 12mm;
   }
 
+  /*
+    Flex/sticky layout yazdırırken boş alan ve erken sayfa kırılmasına yol açabilir.
+  */
+  html,
   body {
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
     background: white !important;
     color: black !important;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
+  body > * {
+    display: block !important;
+  }
+
+  main {
+    display: block !important;
+    flex: none !important;
+    min-height: 0 !important;
+  }
+
   .cv-print-root {
+    display: block !important;
     max-width: 100% !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     color: black !important;
   }
 
@@ -155,7 +173,8 @@
   .cv-print-root h3,
   .cv-print-root p,
   .cv-print-root li,
-  .cv-print-root a {
+  .cv-print-root a,
+  .cv-print-root span {
     color: black !important;
   }
 
@@ -163,7 +182,26 @@
     text-decoration: none !important;
   }
 
-  .cv-print-root section {
-    break-inside: avoid;
+  /*
+    Kritik: section / büyük bloklarda break-inside: avoid KULLANMA.
+    Deneyim bölümü tek section olduğu için avoid, profil sonrası tüm
+    deneyimi sayfa 2’ye iter ve 1. sayfada boşluk bırakırdı.
+  */
+  .cv-print-root,
+  .cv-print-root section,
+  .cv-print-root .cv-job,
+  .cv-print-root ul,
+  .cv-print-root li {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Başlık sayfa sonunda yalnız kalmasın; içerik hemen altında devam etsin */
+  .cv-print-root h2,
+  .cv-print-root h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
   }
 }

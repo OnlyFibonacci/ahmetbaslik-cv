@@ -52,7 +52,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {t("profile")}
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-pretty text-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-foreground">
           {doc.profile}
         </p>
       </section>
@@ -63,7 +63,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         </h2>
         <div className="mt-4 flex flex-col gap-5">
           {doc.jobs.map((job, i) => (
-            <div key={i}>
+            <div key={i} className="cv-job">
               <h3 className="text-sm font-semibold text-foreground">
                 {job.title}
               </h3>
@@ -85,7 +85,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {t("skills")}
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-pretty text-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-foreground">
           {doc.skillsBlock}
         </p>
         {doc.stack.length > 0 ? (
@@ -148,7 +148,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {doc.whyTitle}
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-pretty text-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-foreground">
           {doc.whyBody}
         </p>
       </section>
