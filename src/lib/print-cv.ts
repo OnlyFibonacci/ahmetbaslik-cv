@@ -67,6 +67,13 @@ export function printCvElement(root: HTMLElement): void {
     header { border-bottom: 1px solid #333; padding-bottom: 10pt; margin-bottom: 4pt; }
     section { margin-top: 10pt; }
     .cv-job { margin-bottom: 10pt; }
+    /* Diller bölümü sayfa ortasında bölünmesin; yeni sayfadan başlasın */
+    .cv-section-languages {
+      break-before: page;
+      page-break-before: always;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
   </style>
 </head>
 <body>${clone.outerHTML}</body>

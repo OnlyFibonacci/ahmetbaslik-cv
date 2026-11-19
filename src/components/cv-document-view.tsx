@@ -134,7 +134,7 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         </div>
       </section>
 
-      <section className="mt-6">
+      <section className="cv-section-languages mt-6">
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {t("languages")}
         </h2>

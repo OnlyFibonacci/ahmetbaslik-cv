@@ -156,4 +156,12 @@
     padding: 0 !important;
     color: black !important;
   }
+
+  /* Diller: yeni sayfada başlasın, satırlar bölünmesin */
+  .cv-section-languages {
+    break-before: page;
+    page-break-before: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
