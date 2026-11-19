@@ -27,6 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const cards = [
   {
+    href: "/cv/research-assistant",
+    title: "cvResearch" as const,
+    desc: "cardResearchDesc" as const,
+  },
+  {
     href: "/cv/tradingview",
     title: "cvTrading" as const,
     desc: "cardTradingDesc" as const,
@@ -72,7 +77,7 @@ export default async function HomePage({ params }: Props) {
         {tHome("chooseTrack")}
       </p>
 
-      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((c) => (
           <Card key={c.href} className="flex flex-col border-border/80 bg-card/50">
             <CardHeader>

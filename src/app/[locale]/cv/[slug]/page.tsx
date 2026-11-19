@@ -20,6 +20,10 @@ type Props = {
 };
 
 const titles: Record<CvSlug, { tr: string; en: string }> = {
+  "research-assistant": {
+    tr: "Araştırma görevlisi (birleşik)",
+    en: "Research assistant (combined)",
+  },
   tradingview: {
     tr: "TradingView ve ortaklıklar",
     en: "TradingView & partnerships",

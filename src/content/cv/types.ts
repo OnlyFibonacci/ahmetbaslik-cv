@@ -5,7 +5,8 @@ export type CvSlug =
   | "tradingview"
   | "software"
   | "ecommerce"
-  | "graphic-design";
+  | "graphic-design"
+  | "research-assistant";
 
 export type CvAccent = "blue" | "green" | "muted";
 

@@ -6,6 +6,7 @@
   "nav": {
     "brand": "Ahmet Başlık",
     "home": "Ana sayfa",
+    "cvResearch": "Araştırma görevlisi",
     "cvTrading": "TradingView & ortaklıklar",
     "cvSoftware": "Yazılım",
     "cvEcommerce": "E-ticaret",
@@ -20,6 +21,7 @@
     "heroTitle": "Merhaba, ben Ahmet Başlık.",
     "heroSubtitle": "Bilişim sistemleri mühendisi. Fintech, tam yığın yazılım, e-ticaret ve grafik tasarım alanlarında işverenlere ve ortaklara yönelik güncel özgeçmişler.",
     "chooseTrack": "Uzmanlık alanını seçin",
+    "cardResearchDesc": "Sakarya Üniversitesi BSM araştırma görevlisi için birleşik akademik özgeçmiş (yazılım, fintech, e-ticaret).",
     "cardTradingDesc": "TradingView, Pine Script, webhook entegrasyonları ve topluluk ölçeğinde eğitim.",
     "cardSoftwareDesc": "SaaS, fintech, açık kaynak ve modern web/backend projeleri.",
     "cardEcommerceDesc": "Pazaryeri, operasyon, otomasyon ve dijital büyüme.",

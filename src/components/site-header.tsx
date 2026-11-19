@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", key: "home" as const },
+  { href: "/cv/research-assistant", key: "cvResearch" as const },
   { href: "/cv/tradingview", key: "cvTrading" as const },
   { href: "/cv/software", key: "cvSoftware" as const },
   { href: "/cv/ecommerce", key: "cvEcommerce" as const },

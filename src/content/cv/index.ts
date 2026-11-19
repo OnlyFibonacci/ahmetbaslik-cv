@@ -1,6 +1,7 @@
 import type { CvSlug } from "./types";
 import { ecommerceCv } from "./ecommerce";
 import { graphicDesignCv } from "./graphic-design";
+import { researchAssistantCv } from "./research-assistant";
 import { softwareCv } from "./software";
 import { tradingviewCv } from "./tradingview";
 
@@ -8,6 +9,7 @@ export type { CvDocument, CvSlug } from "./types";
 
 /** Statik rota ve doğrulama için tek kaynak */
 export const CV_SLUGS: CvSlug[] = [
+  "research-assistant",
   "tradingview",
   "software",
   "ecommerce",
@@ -15,6 +17,7 @@ export const CV_SLUGS: CvSlug[] = [
 ];
 
 const bySlug = {
+  "research-assistant": researchAssistantCv,
   tradingview: tradingviewCv,
   software: softwareCv,
   ecommerce: ecommerceCv,
