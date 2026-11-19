@@ -3,12 +3,11 @@ import type { CvDocument } from "./types";
 /**
  * Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği
  * Araştırma Görevlisi başvurusu için birleşik özgeçmiş
- * (yazılım + fintech/TradingView + e-ticaret; grafik tasarım hariç).
+ * (fintech/TradingView + bilgi sistemleri + e-ticaret; grafik tasarım hariç).
  */
 export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
   tr: {
-    heroRole:
-      "Bilişim Sistemleri Mühendisi · Yazılım, Fintech ve Bilgi Sistemleri",
+    heroRole: "Bilişim Sistemleri Mühendisi · Fintech ve Bilgi Sistemleri",
     reach: [
       { value: "10K+", label: "YouTube teknik içerik takipçisi (@OnlyFibonacci)" },
       { value: "3K+", label: "Udemy öğrencisi (algoritmik ticaret ve Pine Script)" },
@@ -40,10 +39,6 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         label: "tr.tradingview.com/u/only_fibonacci",
         href: "https://tr.tradingview.com/u/only_fibonacci/",
       },
-      {
-        label: "store.algotrade.dev",
-        href: "https://store.algotrade.dev",
-      },
     ],
     stack: [
       "Programlama: Python, Go, JavaScript/TypeScript, SQL, PHP, Pine Script",
@@ -51,28 +46,27 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
       "Veri ve otomasyon: web scraping, backtest, webhook, borsa API entegrasyonları",
       "Araçlar: GitHub, n8n, Excel, Google Analytics, Iyzico",
     ],
-    educationTitle: "Bilişim Sistemleri Mühendisliği (Lisans)",
+    educationTitle: "Bilişim Sistemleri Mühendisliği",
     educationDetail: "Sakarya Üniversitesi, Türkiye",
-    credentials: ["Askerlik tamamlandı", "B sınıfı ehliyet"],
-    languages: "Türkçe - Ana dil\nİngilizce - İş düzeyi (okuma/yazma/teknik iletişim)",
-    profile:
-      "Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği mezunu. Yazılım mühendisliği, bilgi sistemleri, fintech uygulamaları ve veri odaklı otomasyon alanlarında uçtan uca ürün geliştirme, açık kaynak çalışma ve teknik eğitim deneyimine sahibim. Araştırma görevlisi kadrosunda akademik üretime, laboratuvar/proje desteğine ve öğrenci mentorluğuna katkı sunmayı hedefliyorum.",
-    jobs: [
+    educationEntries: [
       {
-        title: "Kurucu ve Teknik Lider - AlgoTrade.dev / store.algotrade.dev",
-        period: "2023 - Günümüz",
-        subtitle: "Fintech ve ed-tech yazılım ürünleri; ödeme ve abonelik altyapısı",
-        accent: "blue",
-        bullets: [
-          "Finansal göstergelerin geliştirilmesi, dağıtımı ve kullanıcı provisioning süreçlerini uçtan uca yürüttüm.",
-          "Iyzico API ile güvenli ödeme ve abonelik altyapısı kurdum; B2C/B2B teslimat süreçlerini yönettim.",
-          "Ölçeklenebilir backend mimarisi ve davetiye tabanlı erişim yönetimi ile yüzlerce kullanıcıya hizmet verdim.",
-          "algotrade.dev üzerinde ürün geliştirmeyle paralel teknik içerik ve algoritmik ticaret yazıları ürettim.",
-        ],
+        title: "Yüksek Lisans — Bilişim Sistemleri Mühendisliği",
+        detail: "Sakarya Üniversitesi, Türkiye (devam ediyor)",
       },
       {
-        title: "TradingView - Pine Script, Webhook ve Topluluk",
-        period: "2021 - Günümüz",
+        title: "Lisans — Bilişim Sistemleri Mühendisliği",
+        detail: "Sakarya Üniversitesi, Türkiye",
+      },
+    ],
+    credentials: ["Askerlik tamamlandı", "B sınıfı ehliyet"],
+    languages:
+      "Türkçe — Ana dil\nİngilizce — İş düzeyi (okuma/yazma/teknik iletişim)",
+    profile:
+      "Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği lisans mezunu; aynı programda yüksek lisans eğitimine devam ediyorum. Bilgi sistemleri, fintech uygulamaları ve veri odaklı otomasyon alanlarında uçtan uca ürün geliştirme, açık kaynak çalışma ve teknik eğitim deneyimine sahibim. Araştırma görevlisi kadrosunda akademik üretime, laboratuvar/proje desteğine ve öğrenci mentorluğuna katkı sunmayı hedefliyorum.",
+    jobs: [
+      {
+        title: "TradingView — Pine Script, Webhook ve Topluluk",
+        period: "2021 — Günümüz",
         subtitle: "Premium üye; açık kaynak scriptler ve borsa entegrasyonları",
         accent: "green",
         bullets: [
@@ -84,9 +78,9 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "Teknoloji Eğitmeni - Udemy, YouTube ve Telegram",
-        period: "2022 - Günümüz",
-        subtitle: "Algoritmik ticaret, Pine Script ve finansal yazılım eğitimi",
+        title: "Teknoloji Eğitmeni — Udemy, YouTube ve Telegram",
+        period: "2022 — Günümüz",
+        subtitle: "Algoritmik ticaret, Pine Script ve finansal sistem eğitimi",
         accent: "muted",
         bullets: [
           "3.000+ Udemy öğrencisi; 10.000+ YouTube abonesi; 200+ teknik video.",
@@ -96,7 +90,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "SealLayer - Açık kaynak (GitHub Org)",
+        title: "SealLayer — Açık kaynak (GitHub Org)",
         period: "Açık kaynak",
         subtitle: "Gizlilik odaklı içerik bütünlüğü ve GPG imzalı halka açık ledger",
         accent: "blue",
@@ -107,8 +101,8 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "adisyonqr.com - Multi-tenant SaaS",
-        period: "Yazılım projesi",
+        title: "adisyonqr.com — Multi-tenant SaaS",
+        period: "Proje",
         subtitle: "Restoranlar için gerçek zamanlı sipariş ve yönetim sistemi",
         accent: "green",
         bullets: [
@@ -117,7 +111,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "Next-Markdown-Blog-Engine - Blog altyapısı",
+        title: "Next-Markdown-Blog-Engine — Blog altyapısı",
         period: "Altyapı",
         subtitle: "Self-hosted, GitOps tabanlı Markdown blog motoru",
         accent: "muted",
@@ -127,7 +121,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "ToptanTedarik.com - E-ticaret ve otomasyon",
+        title: "ToptanTedarik.com — E-ticaret ve otomasyon",
         period: "E-ticaret",
         subtitle: "B2B/B2C operasyon; Python ile fiyat ve stok otomasyonu",
         accent: "blue",
@@ -138,16 +132,26 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
           "Trendyol, Hepsiburada, N11, Pazarama, Amazon kanallarında mağaza yönetimi deneyimi.",
         ],
       },
+      {
+        title: "AlgoTrade.dev / store.algotrade.dev — Kurucu (önceki girişim)",
+        period: "2023 — Faaliyet sona erdi",
+        subtitle: "Fintech ve ed-tech ürünleri; ödeme ve abonelik altyapısı",
+        accent: "muted",
+        bullets: [
+          "Finansal göstergelerin geliştirilmesi, dağıtımı ve kullanıcı provisioning süreçlerini uçtan uca yürüttüm.",
+          "Iyzico API ile güvenli ödeme ve abonelik altyapısı kurdum; B2C/B2B teslimat süreçlerini yönettim.",
+          "Ölçeklenebilir backend mimarisi ve davetiye tabanlı erişim yönetimi ile yüzlerce kullanıcıya hizmet verdim.",
+        ],
+      },
     ],
     skillsBlock:
-      "Yazılım mühendisliği: Python, Go, TypeScript/JavaScript, SQL, React, Next.js, Flask, Docker, API tasarımı. Bilgi sistemleri ve entegrasyon: webhook, ödeme API'leri, otomasyon, veri analizi. Fintech: Pine Script, backtest, teknik analiz. Eğitim ve iletişim: teknik içerik üretimi, mentorluk, topluluk yönetimi. Araştırma ilgisi: ölçeklenebilir sistemler, güvenilirlik/denetlenebilirlik, finansal yazılım ve bilgi sistemleri uygulamaları.",
+      "Bilişim sistemleri: Python, Go, TypeScript/JavaScript, SQL, React, Next.js, Flask, Docker, API tasarımı. Entegrasyon ve otomasyon: webhook, ödeme API'leri, veri analizi. Fintech: Pine Script, backtest, teknik analiz. Eğitim ve iletişim: teknik içerik üretimi, mentorluk, topluluk yönetimi. Araştırma ilgisi: ölçeklenebilir sistemler, güvenilirlik/denetlenebilirlik, finansal sistemler ve bilgi sistemleri uygulamaları.",
     whyTitle: "Araştırma görevlisi motivasyonu",
     whyBody:
-      "Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği lisans eğitimim üzerine kurduğum yazılım, fintech ve bilgi sistemleri pratiğini akademik ortama taşımak istiyorum. Açık kaynak üretim, teknik eğitim ve uçtan uca sistem geliştirme deneyimim; araştırma projelerinde uygulama, laboratuvar desteği ve öğrenci mentorluğu için güçlü bir temel oluşturuyor. Disiplinli, ölçülebilir çıktı üreten ve öğrenmeye açık bir araştırma görevlisi adayıyım.",
+      "Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği lisans eğitimim ve devam eden yüksek lisans sürecim üzerine kurduğum fintech ve bilgi sistemleri pratiğini akademik ortama taşımak istiyorum. Açık kaynak üretim, teknik eğitim ve uçtan uca sistem geliştirme deneyimim; araştırma projelerinde uygulama, laboratuvar desteği ve öğrenci mentorluğu için güçlü bir temel oluşturuyor. Disiplinli, ölçülebilir çıktı üreten ve öğrenmeye açık bir araştırma görevlisi adayıyım.",
   },
   en: {
-    heroRole:
-      "Information Systems Engineer · Software, Fintech, and Information Systems",
+    heroRole: "Information Systems Engineer · Fintech and Information Systems",
     reach: [
       { value: "10K+", label: "YouTube technical audience (@OnlyFibonacci)" },
       { value: "3K+", label: "Udemy students (algorithmic trading and Pine Script)" },
@@ -179,10 +183,6 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         label: "tr.tradingview.com/u/only_fibonacci",
         href: "https://tr.tradingview.com/u/only_fibonacci/",
       },
-      {
-        label: "store.algotrade.dev",
-        href: "https://store.algotrade.dev",
-      },
     ],
     stack: [
       "Programming: Python, Go, JavaScript/TypeScript, SQL, PHP, Pine Script",
@@ -190,29 +190,27 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
       "Data and automation: web scraping, backtesting, webhooks, exchange API integrations",
       "Tools: GitHub, n8n, Excel, Google Analytics, Iyzico",
     ],
-    educationTitle: "B.Sc. Information Systems Engineering",
+    educationTitle: "Information Systems Engineering",
     educationDetail: "Sakarya University, Türkiye",
-    credentials: ["Military service completed", "Class B driver's license"],
-    languages:
-      "Turkish - Native\nEnglish - Professional working proficiency (reading/writing/technical communication)",
-    profile:
-      "Graduate of Sakarya University, Information Systems Engineering. Experience across software engineering, information systems, fintech applications, and data-driven automation - including end-to-end product delivery, open-source work, and technical education. Seeking a Research Assistant role to contribute to academic output, lab/project support, and student mentoring.",
-    jobs: [
+    educationEntries: [
       {
-        title: "Founder and Tech Lead - AlgoTrade.dev / store.algotrade.dev",
-        period: "2023 - Present",
-        subtitle: "Fintech and ed-tech software products; payments and subscriptions",
-        accent: "blue",
-        bullets: [
-          "Led end-to-end development, distribution, and user provisioning for financial indicators.",
-          "Built secure payment and subscription flows with the Iyzico API; managed B2C/B2B delivery.",
-          "Designed scalable backend architecture and invite-only access serving hundreds of users.",
-          "Published technical content alongside product work on algotrade.dev.",
-        ],
+        title: "M.Sc. — Information Systems Engineering",
+        detail: "Sakarya University, Türkiye (in progress)",
       },
       {
-        title: "TradingView - Pine Script, Webhooks, and Community",
-        period: "2021 - Present",
+        title: "B.Sc. — Information Systems Engineering",
+        detail: "Sakarya University, Türkiye",
+      },
+    ],
+    credentials: ["Military service completed", "Class B driver's license"],
+    languages:
+      "Turkish — Native\nEnglish — Professional working proficiency (reading/writing/technical communication)",
+    profile:
+      "B.Sc. graduate of Sakarya University, Information Systems Engineering; currently pursuing an M.Sc. in the same program. Experience across information systems, fintech applications, and data-driven automation - including end-to-end product delivery, open-source work, and technical education. Seeking a Research Assistant role to contribute to academic output, lab/project support, and student mentoring.",
+    jobs: [
+      {
+        title: "TradingView — Pine Script, Webhooks, and Community",
+        period: "2021 — Present",
         subtitle: "Premium member; open-source scripts and exchange integrations",
         accent: "green",
         bullets: [
@@ -224,9 +222,9 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "Tech Educator - Udemy, YouTube, and Telegram",
-        period: "2022 - Present",
-        subtitle: "Algorithmic trading, Pine Script, and financial software education",
+        title: "Tech Educator — Udemy, YouTube, and Telegram",
+        period: "2022 — Present",
+        subtitle: "Algorithmic trading, Pine Script, and financial systems education",
         accent: "muted",
         bullets: [
           "3,000+ Udemy students; 10,000+ YouTube subscribers; 200+ technical videos.",
@@ -236,7 +234,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "SealLayer - Open source (GitHub Org)",
+        title: "SealLayer — Open source (GitHub Org)",
         period: "Open source",
         subtitle: "Privacy-first content integrity and GPG-signed public ledger",
         accent: "blue",
@@ -247,8 +245,8 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "adisyonqr.com - Multi-tenant SaaS",
-        period: "Software project",
+        title: "adisyonqr.com — Multi-tenant SaaS",
+        period: "Project",
         subtitle: "Real-time ordering and management for restaurants",
         accent: "green",
         bullets: [
@@ -257,7 +255,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "Next-Markdown-Blog-Engine - Blog platform",
+        title: "Next-Markdown-Blog-Engine — Blog platform",
         period: "Infrastructure",
         subtitle: "Self-hosted, GitOps-based Markdown blog engine",
         accent: "muted",
@@ -267,7 +265,7 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
         ],
       },
       {
-        title: "ToptanTedarik.com - E-commerce and automation",
+        title: "ToptanTedarik.com — E-commerce and automation",
         period: "E-commerce",
         subtitle: "B2B/B2C operations; Python pricing and inventory automation",
         accent: "blue",
@@ -278,11 +276,22 @@ export const researchAssistantCv: { tr: CvDocument; en: CvDocument } = {
           "Store management experience on Trendyol, Hepsiburada, N11, Pazarama, and Amazon.",
         ],
       },
+      {
+        title: "AlgoTrade.dev / store.algotrade.dev — Founder (previous venture)",
+        period: "2023 — Discontinued",
+        subtitle: "Fintech and ed-tech products; payments and subscriptions",
+        accent: "muted",
+        bullets: [
+          "Led end-to-end development, distribution, and user provisioning for financial indicators.",
+          "Built secure payment and subscription flows with the Iyzico API; managed B2C/B2B delivery.",
+          "Designed scalable backend architecture and invite-only access serving hundreds of users.",
+        ],
+      },
     ],
     skillsBlock:
-      "Software engineering: Python, Go, TypeScript/JavaScript, SQL, React, Next.js, Flask, Docker, API design. Information systems and integration: webhooks, payment APIs, automation, data analysis. Fintech: Pine Script, backtesting, technical analysis. Teaching and communication: technical content, mentoring, community management. Research interests: scalable systems, reliability/auditability, financial software, and information systems applications.",
+      "Information systems: Python, Go, TypeScript/JavaScript, SQL, React, Next.js, Flask, Docker, API design. Integration and automation: webhooks, payment APIs, data analysis. Fintech: Pine Script, backtesting, technical analysis. Teaching and communication: technical content, mentoring, community management. Research interests: scalable systems, reliability/auditability, financial systems, and information systems applications.",
     whyTitle: "Research assistant motivation",
     whyBody:
-      "I aim to bring software, fintech, and information systems practice built on my Sakarya University Information Systems Engineering degree into an academic setting. Open-source output, technical teaching, and end-to-end systems experience provide a strong base for research projects, lab support, and student mentoring. I am a disciplined, output-oriented Research Assistant candidate who is eager to learn and contribute.",
+      "I aim to bring fintech and information systems practice - built on my Sakarya University Information Systems Engineering B.Sc. and ongoing M.Sc. - into an academic setting. Open-source output, technical teaching, and end-to-end systems experience provide a strong base for research projects, lab support, and student mentoring. I am a disciplined, output-oriented Research Assistant candidate who is eager to learn and contribute.",
   },
 };

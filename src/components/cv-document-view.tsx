@@ -116,19 +116,37 @@ export async function CvDocumentView({ doc }: CvDocumentViewProps) {
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {t("education")}
         </h2>
-        <p className="mt-3 text-sm font-semibold text-foreground">
-          {doc.educationTitle}
-        </p>
-        <p className="mt-0.5 text-sm text-foreground/80">{doc.educationDetail}</p>
+        <div className="mt-3 flex flex-col gap-3">
+          {(doc.educationEntries?.length
+            ? doc.educationEntries
+            : [
+                {
+                  title: doc.educationTitle,
+                  detail: doc.educationDetail,
+                },
+              ]
+          ).map((edu, i) => (
+            <div key={i}>
+              <p className="text-sm font-semibold text-foreground">{edu.title}</p>
+              <p className="mt-0.5 text-sm text-foreground/80">{edu.detail}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="mt-6">
         <h2 className="border-b border-foreground/15 pb-1 text-sm font-semibold uppercase tracking-wide text-foreground">
           {t("languages")}
         </h2>
-        <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-foreground">
-          {doc.languages}
-        </p>
+        <ul className="mt-3 flex list-none flex-col gap-1 pl-0 text-sm leading-relaxed text-foreground">
+          {doc.languages
+            .split(/\n+/)
+            .map((line) => line.trim())
+            .filter(Boolean)
+            .map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+        </ul>
       </section>
 
       {doc.credentials.length > 0 ? (

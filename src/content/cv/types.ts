@@ -34,6 +34,12 @@ export interface CvJob {
   accent: CvAccent;
 }
 
+/** Eğitim satırı (lisans / yüksek lisans vb.) */
+export interface CvEducation {
+  title: string;
+  detail: string;
+}
+
 export interface CvDocument {
   /** Sayfa başlığı (H1 altı) */
   heroRole: string;
@@ -48,8 +54,11 @@ export interface CvDocument {
   contactLocation?: string;
   links: CvLink[];
   stack: string[];
+  /** Tek eğitim (geriye uyumluluk) */
   educationTitle: string;
   educationDetail: string;
+  /** Birden fazla eğitim; varsa educationTitle/Detail yerine kullanılır */
+  educationEntries?: CvEducation[];
   credentials: string[];
   languages: string;
   profile: string;
